@@ -4,4 +4,57 @@
   <artifactId>starDriver</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Star Driver</name>
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.genechaser.starDriver.starDriver</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+        </plugins>
+    </build> 
+    <repositories>
+	<repository>
+		<id>oss-snapshots-repo</id>
+		<name>Sonatype OSS Maven Repository</name>
+		<url>https://oss.sonatype.org/content/groups/public</url>
+		<snapshots>
+			<enabled>true</enabled>
+			<updatePolicy>always</updatePolicy>
+		</snapshots>
+	</repository>
+</repositories>
+    <dependencies>
+    	<dependency>
+    		<groupId>com.pi4j</groupId>
+    		<artifactId>pi4j-core</artifactId>
+    		<version>1.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+ 		   <groupId>com.pi4j</groupId>
+ 		   <artifactId>pi4j-device</artifactId>
+ 		   <version>1.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+   			<groupId>com.pi4j</groupId>
+   			<artifactId>pi4j-gpio-extension</artifactId>
+ 			<version>1.2-SNAPSHOT</version>
+		</dependency>
+    </dependencies>
 </project>
